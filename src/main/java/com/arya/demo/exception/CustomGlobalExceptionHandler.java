@@ -12,13 +12,23 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 @RestController
-public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler{
+public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(SuperHeroNotFoundException.class)
-	  public final ResponseEntity<ErrorDetails> handleUserNotFoundException(SuperHeroNotFoundException ex, WebRequest request) {
-	    ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
-	        request.getDescription(false));
-	    return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
-	  }
+	public final ResponseEntity<ErrorDetails> handleSuperHeroNotFoundException(SuperHeroNotFoundException ex, WebRequest request) {
+		
+		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+	}
+	
+	
+	@ExceptionHandler(AgeNotInRangeException.class)
+	public final ResponseEntity<ErrorDetails> handleAgeNotInRangeException(AgeNotInRangeException ex, WebRequest request) {
+		
+		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		
+		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+	}
 	
 }
