@@ -74,6 +74,9 @@ public class SuperHeroController {
     
 	@GetMapping("/super-heros/age/{age}")
 	public ResponseEntity<SuperHero> getHeroByAge(@PathVariable int age) {
+		
+		if(20 >= age)
+			throw new AgeNotInRangeException("We don't recruit teen as Super Hero");
     	
 		SuperHero superHero = superHeroUtils.getSuperHeros().stream()
 				.filter(hero -> hero.getAge() == age).findFirst().get();
