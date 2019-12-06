@@ -1,4 +1,4 @@
-package com.arya.demo.exception;
+package com.arya.demo.exception.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

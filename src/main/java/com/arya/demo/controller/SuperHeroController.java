@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.arya.demo.exception.SuperHeroNotFoundException;
+import com.arya.demo.exception.handler.AgeNotInRangeException;
+import com.arya.demo.exception.handler.SuperHeroNotFoundException;
 import com.arya.demo.model.SuperHero;
 import com.arya.demo.util.SuperHeroUtils;
 

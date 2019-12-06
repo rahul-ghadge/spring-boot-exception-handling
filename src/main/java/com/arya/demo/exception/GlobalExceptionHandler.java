@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.arya.demo.exception.handler.AgeNotInRangeException;
+import com.arya.demo.exception.handler.SuperHeroNotFoundException;
+
 @ControllerAdvice
 @RestController
-public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(SuperHeroNotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleSuperHeroNotFoundException(SuperHeroNotFoundException ex, WebRequest request) {
