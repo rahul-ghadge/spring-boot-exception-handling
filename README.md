@@ -2,8 +2,8 @@
 Spring boot exception handling 
 
 
-This application handles the Rest API calls to Super heros<br>
-It will provide out the json response and expose it.
+This application handles the Rest API calls to Super heros, also handle exceptions occured in application<br>
+It will provide out the json response in return for success and errors also.
 
 <b> Features Implemented : </b>
 
