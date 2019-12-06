@@ -7,9 +7,9 @@ It will provide out the json response and expose it.
 
 <b> Features Implemented : </b>
 
-* <p> `SuperHeroUtils` class is under `com.arya.demo.util` package. Which provides dummy data of Super Heros using `Supplier<SuperHero>`.</p>
-* <p> `SuperHeroController` from `com.arya.demo.controller` package exposes Rest APIs</p>
-* <p> `GlobalExceptionHandler` from `com.arya.demo.exception` package handles all exceptions thrown from the **controller**</p>
+* `SuperHeroUtils` class is under `com.arya.demo.util` package. Which provides dummy data of Super Heros using `Supplier<SuperHero>`.
+* `SuperHeroController` from `com.arya.demo.controller` package exposes Rest APIs.
+* `GlobalExceptionHandler` from `com.arya.demo.exception` package handles all exceptions thrown from the **controller**.
 
 <strong> BUILD the application as Maven Project </strong>
 
