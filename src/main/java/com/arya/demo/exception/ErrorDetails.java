@@ -43,11 +43,4 @@ public class ErrorDetails {
 	public String getDetails() {
 		return details;
 	}
-	
-	
-	
-	
-
-	
-
 }
