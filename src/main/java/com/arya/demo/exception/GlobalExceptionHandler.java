@@ -20,7 +20,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(SuperHeroNotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleSuperHeroNotFoundException(SuperHeroNotFoundException ex, WebRequest request) {
 		
-		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		ErrorDetails errorDetails = new ErrorDetails(
+				new Date(), 
+				HttpStatus.NOT_FOUND.value(),
+				HttpStatus.NOT_FOUND.name(),
+				ex.getMessage(), 
+				request.getDescription(false));
 		
 		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
@@ -29,9 +34,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(AgeNotInRangeException.class)
 	public final ResponseEntity<ErrorDetails> handleAgeNotInRangeException(AgeNotInRangeException ex, WebRequest request) {
 		
-		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		ErrorDetails errorDetails = new ErrorDetails(
+				new Date(), 
+				HttpStatus.NOT_ACCEPTABLE.value(),
+				HttpStatus.NOT_ACCEPTABLE.name(),
+				ex.getMessage(), 
+				request.getDescription(false));
 		
 		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
-	
+
 }
